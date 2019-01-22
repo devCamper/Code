@@ -1,0 +1,21 @@
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    document.body.style.margin = 0
+
+    var c = document.body
+        .appendChild(document.createElement("canvas"))
+        .getContext("2d");
+    document.body.firstChild.width = window.innerWidth
+    document.body.firstChild.height = window.innerHeight
+
+    c.beginPath();
+    c.arc(
+        document.documentElement.clientWidth/2,
+        document.documentElement.clientHeight/2,
+        document.documentElement.clientHeight/2,
+        0,
+        2*Math.PI
+    );
+    c.stroke();
+});
+</script>
