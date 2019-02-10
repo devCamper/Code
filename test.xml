@@ -1,0 +1,22 @@
+<!-- <?xml-stylesheet href="test.css"?> -->
+<!-- <html xmlns="http://www.w3.org/1999/xhtml"> -->
+<html>
+<head>
+<!-- <x xmlns="http://www.w3.org/1999/xhtml"/> -->
+<style xmlns="http://www.w3.org/1999/xhtml">
+body * {
+    font-family: Helvetica;
+    display: block;
+}
+</style>
+<script xmlns="http://www.w3.org/1999/xhtml">
+alert('Hello');
+</script>
+<title xmlns="http://www.w3.org/1999/xhtml">This is a test.</title>
+</head>
+<body>
+<!-- <h1 xmlns="">Test</h1> -->
+<h1>Test</h1>
+<canvas xmlns="http://www.w3.org/1999/xhtml" style="border: 1px solid #eee">Your browser doesn't support the canvas element.</canvas>
+</body>
+</html>
