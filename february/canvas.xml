@@ -1,0 +1,11 @@
+<canvas style="background: #aaa;width:500px;height:500px" xmlns="http://www.w3.org/1999/xhtml" id="canvas" width="500px" height="500px">
+<script>
+
+
+var c = document.getElementById("canvas");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.arc(200, 150, 100, 0, 2 * Math.PI);
+ctx.stroke();
+</script>
+</canvas>
