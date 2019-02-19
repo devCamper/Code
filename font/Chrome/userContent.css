@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'Gilbert Color';
+  src: url('https://localhost/g.otf');
+}
+* {
+  font-family: 'Gilbert Color' !important;
+}
