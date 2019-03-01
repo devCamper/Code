@@ -14,3 +14,8 @@ function randStr(length = 10, start = ' ', end = '~', start1, end1) {
   }
   return result
 }
+
+function randInt(min,max) // min and max included
+{
+    return Math.floor(Math.random()*(max-min+1)+min);
+}
