@@ -1,0 +1,104 @@
+@font-face {
+  font-family: 'rectangle';
+  src:  url('fonts/rectangle.eot?lx1nmf');
+  src:  url('fonts/rectangle.eot?lx1nmf#iefix') format('embedded-opentype'),
+    url('fonts/rectangle.ttf?lx1nmf') format('truetype'),
+    url('fonts/rectangle.woff?lx1nmf') format('woff'),
+    url('fonts/rectangle.svg?lx1nmf#rectangle') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'rectangle' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-a:before {
+  content: "\61";
+}
+.icon-b:before {
+  content: "\62";
+}
+.icon-c:before {
+  content: "\63";
+}
+.icon-d:before {
+  content: "\64";
+}
+.icon-e:before {
+  content: "\65";
+}
+.icon-f:before {
+  content: "\66";
+}
+.icon-g:before {
+  content: "\67";
+}
+.icon-h:before {
+  content: "\68";
+}
+.icon-i:before {
+  content: "\69";
+}
+.icon-j:before {
+  content: "\6a";
+}
+.icon-k:before {
+  content: "\6b";
+}
+.icon-l:before {
+  content: "\6c";
+}
+.icon-m:before {
+  content: "\6d";
+}
+.icon-n:before {
+  content: "\6e";
+}
+.icon-o:before {
+  content: "\6f";
+}
+.icon-p:before {
+  content: "\70";
+}
+.icon-q:before {
+  content: "\71";
+}
+.icon-r:before {
+  content: "\72";
+}
+.icon-s:before {
+  content: "\73";
+}
+.icon-t:before {
+  content: "\74";
+}
+.icon-u:before {
+  content: "\75";
+}
+.icon-v:before {
+  content: "\76";
+}
+.icon-w:before {
+  content: "\77";
+}
+.icon-x:before {
+  content: "\78";
+}
+.icon-y:before {
+  content: "\79";
+}
+.icon-z:before {
+  content: "\7a";
+}

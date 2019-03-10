@@ -1,0 +1,104 @@
+curl -D headers.txt -c cookies.txt -o moodle.html -d 'username=XXX&password=XXX' https://moodle.gso-koeln.de/login/
+
+curl -D headers1.txt -c cookies1.txt -o moodle.html -b cookies.txt https://moodle.gso-koeln.de/
+
+curl -D headers1.txt -c cookies1.txt -o moodle.html -b cookies.txt https://moodle.gso-koeln.de/course/view.php?id=686 # DB
+curl -D headers1.txt -c cookies1.txt -o moodle.html -b cookies.txt https://moodle.gso-koeln.de/course/view.php?id=664 # ANW
+
+curl -D headers1.txt -c cookies1.txt -o moodle.html -b cookies.txt https://moodle.gso-koeln.de/mod/assign/view.php?id=44252 # Abgabe
+
+# Select char/line:	v/V
+# Copy/cut:		y/d
+# Undo:			u
+
+printf 'GET / HTTP/1.1\r\nHost: moodle.gso-koeln.de\r\n\r\n' | ncat --ssl moodle.gso-koeln.de 443
+
+printf 'GET / HTTP/1.1\r\nHost: moodle.gso-koeln.de\r\nCookie: MoodleSession=n61nudgtraj4g5l1fh5opcp5h0\r\n\r\n' | openssl s_client -connect moodle.gso-koeln.de:443 > moodle.html
+
+
+
+
+
+
+
+
+
+
+
+
+#
+
+printf 'POST /login/ HTTP/1.1\r\nHost: moodle.gso-koeln.de\r\nContent-Length: 49\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\nusername=XXX&password=XXX\r\n' | openssl s_client -connect moodle.gso-koeln.de:443 | grep Cookie # second one
+
+printf 'GET /mod/assign/view.php?id=44252&action=editsubmission HTTP/1.1\r\nHost: moodle.gso-koeln.de\r\nCookie: MoodleSession=0vua2tg7k3khh592qvsbrush15\r\n\r\n' | openssl s_client -connect moodle.gso-koeln.de:443 > moodle.html
+
+grep sesskey moodle.html | sed -n 3p # sesskey
+grep fm-loading moodle.html | sed -n 1p # client_id
+grep itemid moodle.html | sed -n 1p # itemid
+grep '"filename"' moodle.html |less
+
+printf 'POST https://moodle.gso-koeln.de/repository/draftfiles_ajax.php?action=delete HTTP/1.1\r\nHost: moodle.gso-koeln.de\r\nContent-Type: application/x-www-form-urlencoded\r\nCookie: MoodleSession=qlljjejfco31091dn43o9lqek2\r\nsesskey=5lrCpxCRlz&client_id=5c852cbe1f111&filepath=%2F&itemid=689171789&filename=sequenz55.txt\r\n' | openssl s_client -connect moodle.gso-koeln.de:443
+
+grep sesskey moodle.html | sed -n 3p # sesskey
+grep itemid moodle.html | sed -n 1p # itemid
+
+# 559?
+
+printf 'POST https://moodle.gso-koeln.de/repository/repository_ajax.php?action=upload HTTP/1.1\r
+Host: moodle.gso-koeln.de\r
+Cookie: MoodleSession=qlljjejfco31091dn43o9lqek2\r
+Content-Type: multipart/form-data; boundary=---------------------------18467633426500\r
+Content-Length: 496\r
+\r
+-----------------------------18467633426500\r
+Content-Disposition: form-data; name="repo_upload_file"; filename="sequenz66.txt"\r
+\r
+SEQUENZ\r
+-----------------------------18467633426500\r
+Content-Disposition: form-data; name="repo_id"\r
+\r
+3\r
+-----------------------------18467633426500\r
+Content-Disposition: form-data; name="sesskey"\r
+\r
+5lrCpxCRlz\r
+-----------------------------18467633426500\r
+Content-Disposition: form-data; name="itemid"\r
+\r
+689171789\r
+-----------------------------18467633426500--\r\n' | openssl s_client -connect moodle.gso-koeln.de:443
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+printf 'POST https://moodle.gso-koeln.de/repository/repository_ajax.php?action=upload HTTP/1.1\r\nHost: moodle.gso-koeln.de\r\nContent-Type: multipart/form-data; boundary=---------------------------1337\r\nCookie: MoodleSession=qlljjejfco31091dn43o9lqek2\r
+-----------------------------18467633426500\r
+Content-Disposition: form-data; name="repo_upload_file"; filename="sequenz66.txt"\r
+\r
+SEQUENZ\r
+-----------------------------18467633426500\r
+Content-Disposition: form-data; name="repo_id"\r
+\r
+3\r
+-----------------------------18467633426500\r
+Content-Disposition: form-data; name="sesskey"\r
+\r
+IrgGEZT7nD\r
+-----------------------------18467633426500\r
+Content-Disposition: form-data; name="itemid"\r
+\r
+644978608\r
+-----------------------------18467633426500--\r\n' | openssl s_client -connect moodle.gso-koeln.de:443

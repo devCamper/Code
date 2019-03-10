@@ -1,0 +1,122 @@
+########################################################### delete request start
+
+POST https://moodle.gso-koeln.de/repository/draftfiles_ajax.php?action=delete
+
+Host: moodle.gso-koeln.de
+Content-Type: application/x-www-form-urlencoded
+Cookie: MoodleSession=qlljjejfco31091dn43o9lqek2
+
+sesskey=Z5vM7eoydt&client_id=5c85083e25361&filepath=%2F&itemid=151177125&filename=sequenz44.txt
+
+
+	    third sesskey	Z5vM7eoydt
+client_id = first fm-loading	5c85083e25361
+	    first itemid	151177125
+filename =  second fp-filename	sequenz44.txt (replace ' ' with '%20')
+
+################################################################################
+
+####################################################### first post request start
+
+POST https://moodle.gso-koeln.de/repository/repository_ajax.php?action=upload
+
+Host: moodle.gso-koeln.de
+Content-Type: multipart/form-data; boundary=---------------------------1337
+Cookie: MoodleSession=qlljjejfco31091dn43o9lqek2
+
+-----------------------------1337
+Content-Disposition: form-data; name="repo_upload_file"; filename="sequenz55.txt"
+
+SEQUENZ
+-----------------------------1337
+Content-Disposition: form-data; name="repo_id"
+
+3
+-----------------------------1337
+Content-Disposition: form-data; name="sesskey"
+
+Z5vM7eoydt
+-----------------------------1337
+Content-Disposition: form-data; name="itemid"
+
+151177125
+-----------------------------1337--
+
+	    third sesskey	Z5vM7eoydt
+	    first itemid	151177125
+#################################################################################
+
+####################################################### second post request start
+
+POST https://moodle.gso-koeln.de/mod/assign/view.php
+
+Host: moodle.gso-koeln.de
+Content-Type: application/x-www-form-urlencoded
+Cookie: MoodleSession=qlljjejfco31091dn43o9lqek2
+
+lastmodified=1655000000&id=44252&userid=5452&action=savesubmission&sesskey=Z5vM7eoydt&_qf__mod_assign_submission_form=1&files_filemanager=151177125&submitbutton=%C3%84nderungen+sichern
+
+third Aufgabe	    id			44252
+		    third userid	5452
+		    third sesskey	Z5vM7eoydt
+files_filemanager = first itemid	151177125
+
+#################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3j7SqPhQJj
+
+-----------------------------1337
+Content-Disposition: form-data; name="repo_upload_file"; filename="sequenz13.txt"
+
+SEQUENZ
+-----------------------------1337
+Content-Disposition: form-data; name="repo_id"
+
+3
+-----------------------------1337
+Content-Disposition: form-data; name="sesskey"
+
+Z5vM7eoydt
+-----------------------------1337
+Content-Disposition: form-data; name="itemid"
+
+606750929
+-----------------------------1337--
+
+
+
+
+
+
+
+https://moodle.gso-koeln.de/mod/assign/view.php
+
+Host: moodle.gso-koeln.de
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: de,en-US;q=0.7,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Referer: https://moodle.gso-koeln.de/mod/assign/view.php?id=44252&action=editsubmission
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 184
+Connection: keep-alive
+Cookie: MoodleSession=qlljjejfco31091dn43o9lqek2
+Upgrade-Insecure-Requests: 1
+
+lastmodified=1552216035&id=44252&userid=5452&action=savesubmission&sesskey=Z5vM7eoydt&_qf__mod_assign_submission_form=1&files_filemanager=437793612&submitbutton=%C3%84nderungen+sichern
