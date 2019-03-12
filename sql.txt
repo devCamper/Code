@@ -1,0 +1,11 @@
+SELECT k.Kunde_ID, k.Firma, a.Bezeichnung, p.Verkaufs_Einzelpreis, p.Menge, (p.Verkaufs_Einzelpreis * p.Menge) AS Summe, r.Rechnung_ID FROM
+
+(
+    (
+        Artikel AS a INNER JOIN Position as p ON a.Artikel_ID=p.Artikel_ID
+    )
+
+    INNER JOIN Rechnung AS r ON p.Rechnung_ID = r.Rechnung_ID
+)
+
+INNER JOIN Kunde AS k ON r.Kunde_ID = k.Kunde_ID ORDER BY k.Firma
