@@ -1,0 +1,65 @@
+# Add
+
+cd /c/Users/User/Desktop/GitHub/Front-End-Libraries-Certification/React
+ls|tail -1
+hub issue create -a devCamper -l enhancement \
+	-M 1 -m 'Add XXX'
+	# leer
+# Add issue to project manually
+# Move to In progress
+git checkout -b add-XXX
+ls|tail -1
+code XXX.js
+#Ctrl+S
+git add -A
+head -2 XXX.js
+git commit -m 'Create XXX()'
+git push -u origin HEAD
+hub issue|tail -1
+hub pull-request -a devCamper -l enhancement \
+	-M 1 \
+	-m 'Create XXX'
+	-m '#XX'
+# Add PR to project manually
+git checkout master
+git merge https://github.com/devCamper/Javascript-Algorithms-And-Data-Structures-Certification/pull/XX
+git push
+git tag|tail -1
+git tag 1.0.X
+git push origin 1.0.X
+Close issue manually
+git branch
+git branch -d add-XXX
+git push -d origin add-XXX
+
+# Solve
+
+cd /c/Users/User/Desktop/GitHub/Front-End-Libraries-Certification/React
+(hub issue -s closed && hub pr list --state=merged)|grep -i 'XXX'
+hub issue create -a devCamper -l bug \	# <-- bug
+	-M 1 -m 'Solve XXX' \		# <-- Solve
+	-m '#XX #XX'			# <-- #XX #XX
+# Add issue to project manually
+# Move to In progress
+git checkout -b solve-XXX		# <-- solve-
+code XXX.js
+git add -A
+head -2 XX*
+git commit -m 'Implement XXX()'		# <-- Implement
+git push -u origin HEAD
+(hub issue -s closed && hub pr list --state=merged && hub issue)|grep -i 'XXX'
+hub pull-request -a devCamper -l bug \	# <-- bug
+	-M 1 \
+	-m 'Implement XXX' \		# <-- Implement
+	-m '#XX #XX #XX'		# <-- #XXX #XXX #XXX
+# Add PR to project manually
+git checkout master
+git merge https://github.com/devCamper/Javascript-Algorithms-And-Data-Structures-Certification/pull/XX
+git push
+git tag|tail -1
+git tag 1.0.X
+git push origin 1.0.X
+Close issue manually
+git branch
+git branch -d solve-XXX			# <-- solve-
+git push -d origin solve-XXX		# <-- solve-
