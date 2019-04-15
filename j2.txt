@@ -1,0 +1,1 @@
+fs.readFile('D:/Code/assembly.txt',(a,b)=>console.log(b.toString()))

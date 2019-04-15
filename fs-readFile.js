@@ -1,0 +1,1 @@
+fs.readFile('D:/http-get.js',(err,data)=>console.log(data.toString()))

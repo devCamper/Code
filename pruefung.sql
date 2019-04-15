@@ -34,3 +34,12 @@ SELECT k.Kunde_ID, k.Firma, a.Bezeichnung, SUM(p.Verkaufs_Einzelpreis*p.Menge) A
 )
 
 INNER JOIN Kunde AS k ON r.Kunde_ID = k.Kunde_ID GROUP BY k.Kunde_ID, k.Firma, a.Bezeichnung
+
+/**/
+
+CREATE TABLE Artikelgruppe (Artikelgruppe_ID INTEGER, Bezeichnung CHAR, PRIMARY KEY(Artikelgruppe_ID))
+
+/**/
+
+ALTER TABLE Artikel ADD COLUMN Artikelgruppe_ID INTEGER
+ALTER TABLE Artikel ADD FOREIGN KEY(Artikelgruppe_ID) REFERENCES Artikelgruppe(Artikelgruppe_ID)

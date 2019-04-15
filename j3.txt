@@ -1,0 +1,1 @@
+fs.writeFile('D:/data.txt','data', (a) => console.log(a))

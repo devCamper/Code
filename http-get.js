@@ -1,0 +1,1 @@
+http.get('http://duckduckgo.com',(b) => b.on('data',(data)=>console.log(data.toString())))
